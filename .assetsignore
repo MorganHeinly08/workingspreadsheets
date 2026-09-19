@@ -1,0 +1,8 @@
+# Wrangler serves EVERY file under assets.directory. Without this, the deploy uploads
+# .git/ and serves the entire repository - history, hooks, config - at /.git/... .
+# Confirmed live on the first deploy: /.git/config returned 200.
+# Harmless on a public repo, fatal on a private one; exclude it either way.
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
