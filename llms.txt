@@ -1,0 +1,34 @@
+# SimpleDesigns
+
+> Free tools for allied health professionals. Free browser-based calculators for speech-language pathologists, occupational therapists and school-based clinicians, plus the spreadsheet templates the calculators are extracted from.
+
+Every calculator runs entirely client-side, is free, requires no account, and uses the same formulas as the paid workbooks it was extracted from.
+
+## Free tools
+
+- [SLP Progress Statement Builder](https://workingspreadsheets.com/tools/slp-progress-statement-builder/): Turns a baseline, current score, target and condition into a written IEP or therapy progress statement that reports both raw score and progress toward criterion.
+- [IEP Goal Progress Calculator](https://workingspreadsheets.com/tools/iep-goal-progress-calculator/): Percent progress toward an IEP goal is (current − baseline) ÷ (target − baseline), clamped to 0–100%. Enter three numbers to get progress, weekly pace and a projected date.
+- [SLP Caseload vs Workload Calculator](https://workingspreadsheets.com/tools/slp-caseload-workload-calculator/): SLP workload = (direct + indirect + compliance + other duty minutes) ÷ contracted minutes per week. Shows whether the job fits the paid week and how much direct service is left per student.
+- [OT Productivity Calculator](https://workingspreadsheets.com/tools/ot-productivity-calculator/): OT productivity = billable hours ÷ (hours worked − leave hours). The calculator also converts the gap to your target into extra billable minutes per working day.
+- [CEU Renewal Calculator](https://workingspreadsheets.com/tools/ceu-renewal-calculator/): CEU renewal calculator: hours remaining = required − earned; pace = remaining ÷ months to renewal. Tracks subject-specific requirements such as ethics hours separately.
+
+## Spreadsheet templates
+
+- [SLP Mini Caseload Tracker](https://simpledesignllc.etsy.com/listing/4554621989): 10 students, 6 goals, automatic progress.
+- [SLP Caseload Data System](https://simpledesignllc.etsy.com/listing/4535229572): Goal tracking and progress monitoring in one file.
+- [SLP Large Caseload Tracker](https://simpledesignllc.etsy.com/listing/4556454263): Built for 100 students and district-level reporting.
+- [SLP Workload Tracker](https://simpledesignllc.etsy.com/listing/4555327022): Direct and indirect time against your contracted hours.
+- [Speech Therapy Schedule Builder](https://simpledesignllc.etsy.com/listing/4555326814): Group planner with a service-minutes check.
+- [SLPA Supervision Log](https://simpledesignllc.etsy.com/listing/4556467664): Direct observation percentage and weekly documentation.
+- [SLP Progress Report Generator](https://simpledesignllc.etsy.com/listing/4563982361): Turns your data into a formatted report, offline.
+- [OT Caseload Tracker](https://simpledesignllc.etsy.com/listing/4557515151): School-based service minutes log.
+- [School OT Workload Tracker](https://simpledesignllc.etsy.com/listing/4556468398): OT and PT caseload hours and equipment.
+- [Pediatric OT Log](https://simpledesignllc.etsy.com/listing/4557535278): Session and home-programme adherence.
+- [Practice Dashboard](https://simpledesignllc.etsy.com/listing/4557537492): Clinician productivity and contribution, for owners.
+- [IEP Goal Tracker](https://simpledesignllc.etsy.com/listing/4557704870): Progress monitoring and report builder.
+- [IEP Caseload Tracker](https://simpledesignllc.etsy.com/listing/4557704770): Compliance and meeting log for case managers.
+- [IEP Due Date Tracker](https://simpledesignllc.etsy.com/listing/4555315137): Annual reviews and triennial dates.
+- [IEP Progress Monitoring Spreadsheet](https://simpledesignllc.etsy.com/listing/4558848941): Graphs your data automatically.
+- [Reading Intervention Tracker](https://simpledesignllc.etsy.com/listing/4557684953): MTSS progress monitoring and tier decisions.
+- [CEU Renewal Tracker](https://simpledesignllc.etsy.com/listing/4555327984): Multiple licences, separate renewal dates.
+- [CEU Tracker, multi-state](https://simpledesignllc.etsy.com/listing/4557517009): Continuing education log for clinicians.
