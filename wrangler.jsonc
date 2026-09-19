@@ -1,0 +1,17 @@
+{
+  // Cloudflare Workers Static Assets. Cloudflare now routes new projects through the
+  // Workers flow rather than Pages, and `npx wrangler deploy` needs this file or the
+  // deploy fails with "Missing entry-point".
+  //
+  // There is NO build step and no Worker script: this repo IS the built site, generated
+  // by scripts/build_site.py in the engine repo. "directory": "." serves it as-is.
+  "name": "workingspreadsheets",
+  "compatibility_date": "2026-09-19",
+  "assets": {
+    "directory": ".",
+    // Serve /about/ from /about/index.html and return 404.html for unknown paths, so the
+    // clean URLs in the sitemap and every canonical tag resolve.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
