@@ -43,6 +43,17 @@ header.site nav a:hover { color:var(--teal); text-decoration:underline; }
 footer.site { border-top:1px solid var(--line); margin-top:64px; padding:28px 0 44px; color:var(--muted); font-size:.88rem; }
 footer.site a { color:var(--muted); }
 
+/* --- Shorts embed ----------------------------------------------------------
+   A Short is 9:16. Capped by height as well as width so a portrait video does not
+   become a two-screen-tall column on a phone, and centred because a 9:16 box in a
+   full-width text column otherwise sits oddly against the left margin. */
+.ytwrap { max-width:340px; margin:0 auto 6px; }
+.ytwrap iframe {
+  display:block; width:100%; aspect-ratio:9/16; max-height:70vh;
+  border:0; border-radius:10px; background:#000;
+}
+p.muted { color:var(--muted); font-size:.9rem; text-align:center; }
+
 /* --- the direct answer an engine extracts ---------------------------------- */
 .answer {
   border-left:3px solid var(--teal); background:var(--panel);
