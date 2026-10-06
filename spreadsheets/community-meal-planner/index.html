@@ -17,7 +17,20 @@
 <meta name="p:domain_verify" content="275247d2bb1dbb4e2f80b4fb1f00d302">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://workingspreadsheets.com/"},{"@type":"ListItem","position":2,"name":"Spreadsheets","item":"https://workingspreadsheets.com/spreadsheets/"}]}</script><meta name="robots" content="noindex,follow">
-
+<script data-goatcounter="https://workingspreadsheets.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+(function(){
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('a[data-out]');
+    if(!a||!window.goatcounter||!window.goatcounter.count)return;
+    var href=a.getAttribute('href')||'',lid=(href.match(/listing\/(\d+)/)||[])[1];
+    var page=location.pathname.replace(/^\/|\/$/g,'')||'home';
+    try{window.goatcounter.count({
+      path:(/etsy\.com/.test(href)?'etsy-click/':'out-click/')+page,
+      title:a.getAttribute('data-out')+(lid?' · listing '+lid:''),event:true});}catch(e){}
+  },{capture:true,passive:true});
+})();
+</script>
 </head>
 <body>
 <header class="site"><div class="wrap wide topbar">
@@ -28,9 +41,9 @@
 
 <h1>Community Meal Planner is no longer available</h1>
 <div class="answer"><p>This template has been retired from the shop. Everything else is
-still here — 94 working Excel and Google Sheets templates, many of them close
+still here — 125 working Excel and Google Sheets templates, many of them close
 cousins of this one.</p></div>
-<p><a class="btn" href="/spreadsheets/">Browse all 94 spreadsheets</a></p>
+<p><a class="btn" href="/spreadsheets/">Browse all 125 spreadsheets</a></p>
 <p>Or start from <a href="/tools/">the free calculators</a>.</p>
 
 </main>
@@ -52,7 +65,7 @@ cousins of this one.</p></div>
 <p>Every workbook is a one-time purchase, delivered as a file you keep. The calculators on
 this site are free, run entirely in your browser, and send nothing anywhere — there is no
 account, and nothing you type leaves the page.</p>
-<p>Page last reviewed 2026-10-02. Nothing here is clinical, legal or financial advice.</p>
+<p>Page last reviewed 2026-10-06. Nothing here is clinical, legal or financial advice.</p>
 </div>
 </div></footer>
 

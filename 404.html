@@ -17,7 +17,20 @@
 <meta name="p:domain_verify" content="275247d2bb1dbb4e2f80b4fb1f00d302">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SimpleDesigns","url":"https://workingspreadsheets.com/","description":"Spreadsheets that do the work","sameAs":["https://www.etsy.com/shop/SimpleDesignLLC","https://www.youtube.com/@simpledesignllc"]}</script>
-
+<script data-goatcounter="https://workingspreadsheets.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+(function(){
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest&&ev.target.closest('a[data-out]');
+    if(!a||!window.goatcounter||!window.goatcounter.count)return;
+    var href=a.getAttribute('href')||'',lid=(href.match(/listing\/(\d+)/)||[])[1];
+    var page=location.pathname.replace(/^\/|\/$/g,'')||'home';
+    try{window.goatcounter.count({
+      path:(/etsy\.com/.test(href)?'etsy-click/':'out-click/')+page,
+      title:a.getAttribute('data-out')+(lid?' · listing '+lid:''),event:true});}catch(e){}
+  },{capture:true,passive:true});
+})();
+</script>
 </head>
 <body>
 <header class="site"><div class="wrap wide topbar">
@@ -27,10 +40,10 @@
 <main class="wrap">
 
 <h1>That page has moved or never existed</h1>
-<div class="answer"><p>Nothing here. All 94 spreadsheets are listed on
+<div class="answer"><p>Nothing here. All 125 spreadsheets are listed on
 <a href="/spreadsheets/">one page</a>, and the free calculators are all still where they
 were.</p></div>
-<p><a class="btn" href="/spreadsheets/">Browse all 94 spreadsheets</a></p>
+<p><a class="btn" href="/spreadsheets/">Browse all 125 spreadsheets</a></p>
 <p><a href="/tools/">Free calculators</a> · <a href="/">Home</a></p>
 
 </main>
@@ -52,7 +65,7 @@ were.</p></div>
 <p>Every workbook is a one-time purchase, delivered as a file you keep. The calculators on
 this site are free, run entirely in your browser, and send nothing anywhere — there is no
 account, and nothing you type leaves the page.</p>
-<p>Page last reviewed 2026-10-02. Nothing here is clinical, legal or financial advice.</p>
+<p>Page last reviewed 2026-10-06. Nothing here is clinical, legal or financial advice.</p>
 </div>
 </div></footer>
 
