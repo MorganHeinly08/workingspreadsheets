@@ -291,3 +291,39 @@ footer.site ul { list-style:none; margin:0; padding:0; }
 footer.site li { margin:0 0 7px; line-height:1.45; }
 footer.site .fine { border-top:1px solid var(--line); padding-top:20px; margin:0; line-height:1.6; }
 footer.site .fine p { margin:0 0 .6em; }
+
+/* --- 2026-10-07 runbook additions ------------------------------------------- */
+/* On a phone the price and Buy button come BEFORE the (now full-length) feature list,
+   so the button is on the first screen without scrolling. */
+@media (max-width:720px) { .buybox .act { order:-1; } }
+.pcard .compat {
+  align-self:flex-start; font-size:.72rem; font-weight:650; letter-spacing:.02em;
+  color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:2px 9px;
+  background:var(--bg);
+}
+.toollink { margin:-6px 0 22px; font-weight:600; }
+.toollink a { color:var(--teal); }
+.lvid { max-width:720px; margin:0 auto 8px; }
+.lvid video { display:block; width:100%; height:auto; max-height:72vh; border-radius:10px;
+  border:1px solid var(--line); background:var(--panel); }
+details.more { margin:20px 0 0; }
+details.more > summary { cursor:pointer; font-weight:650; color:var(--ink); font-size:1.05rem;
+  padding:10px 0; list-style:revert; }
+.rating-line { font-weight:600; color:var(--ink); }
+.rating-line .stars { color:var(--amber); letter-spacing:.06em; }
+.reviews { display:grid; gap:14px; margin:12px 0 8px; padding:0; list-style:none; }
+.reviews li { margin:0; border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--panel); padding:16px 18px; }
+.reviews .stars { color:var(--amber); letter-spacing:.06em; }
+.reviews .meta { color:var(--muted); font-size:.84rem; margin:2px 0 8px; }
+.reviews blockquote { margin:0; color:var(--body); font-size:.96rem; line-height:1.55; }
+.reviews .for { display:block; font-size:.84rem; margin-top:8px; }
+.signup { border:1px solid var(--brand-edge); background:var(--brand-soft); border-radius:var(--radius);
+  padding:18px 20px; margin:28px 0; }
+.signup h2 { margin:0 0 6px; font-size:1.08rem; }
+.signup p { margin:0 0 12px; font-size:.93rem; }
+.signup form { display:flex; gap:10px; flex-wrap:wrap; }
+.signup input[type=email] { flex:1 1 220px; min-width:0; padding:10px 12px; border:1px solid var(--line);
+  border-radius:8px; background:var(--field); color:var(--ink); font:inherit; }
+.signup .fine { font-size:.8rem; color:var(--muted); margin:10px 0 0; }
+.tools-group { margin-top:30px; }

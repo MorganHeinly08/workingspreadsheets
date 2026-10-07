@@ -92,17 +92,78 @@
     return h + '</tbody></table></div>';
   }
 
-  /* Attach the renderer to every field, without running it. See note 1 above. */
+  /* The tool's slug, from /tools/<slug>/. Used for the calc-run analytics event. */
+  function slug() {
+    var m = /\/tools\/([^\/]+)\//.exec(location.pathname);
+    return m ? m[1] : 'unknown';
+  }
+
+  /* calc-run/<slug>: once per browser session per tool, the first time a human-driven
+     result shows. Counts that a calculator was USED, never what was typed into it. */
+  function countRun() {
+    var key = 'sd-calc-run-' + slug();
+    try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, '1'); } catch (e) {}
+    try {
+      if (w.goatcounter && w.goatcounter.count) {
+        w.goatcounter.count({ path: 'calc-run/' + slug(), title: document.title, event: true });
+      }
+    } catch (e) {}
+    try { document.dispatchEvent(new CustomEvent('sd:calc-run')); } catch (e) {}
+  }
+
+  /* Shareable results: every named field is mirrored into the URL hash (#rate=0.5&hours=40),
+     and a link that carries a hash restores those inputs on load. The hash never reaches a
+     server, so a shared result stays as private as the calculator itself. */
+  function fields(form) {
+    return Array.prototype.filter.call(form.elements, function (el) {
+      return el.name && el.type !== 'submit' && el.type !== 'button';
+    });
+  }
+
+  function writeHash(form) {
+    var parts = [];
+    fields(form).forEach(function (el) {
+      var v = el.type === 'checkbox' ? (el.checked ? '1' : '0') : el.value;
+      parts.push(encodeURIComponent(el.name) + '=' + encodeURIComponent(v));
+    });
+    try { history.replaceState(null, '', '#' + parts.join('&')); } catch (e) {}
+  }
+
+  function readHash(form) {
+    var h = (location.hash || '').replace(/^#/, '');
+    if (!h || h.indexOf('=') < 0) return false;
+    var map = {};
+    h.split('&').forEach(function (kv) {
+      var i = kv.indexOf('=');
+      if (i > 0) map[decodeURIComponent(kv.slice(0, i))] = decodeURIComponent(kv.slice(i + 1));
+    });
+    var hit = false;
+    fields(form).forEach(function (el) {
+      if (!(el.name in map)) return;
+      if (el.type === 'checkbox') el.checked = map[el.name] === '1';
+      else el.value = map[el.name];
+      hit = true;
+    });
+    return hit;
+  }
+
+  /* Attach the renderer to every field, without running it. See note 1 above.
+     The one exception: a shared link (#field=value...) restores its inputs and renders,
+     because that visitor asked for a specific result, not the worked example. */
   function wire(render) {
     var form = $('calc'), out = $('out');
     if (!form || !out) return;
+    var paint = function () {
+      try { out.innerHTML = render(); return true; } catch (err) { return false; }
+    };
     var run = function () {
-      try { out.innerHTML = render(); } catch (err) { /* leave the server-rendered answer */ }
+      if (paint()) { writeHash(form); countRun(); }
     };
     form.addEventListener('input', run);
     form.addEventListener('change', run);
     form.addEventListener('submit', function (ev) { ev.preventDefault(); run(); });
-    w.__render = run;   // site_check.py calls this to force one render for comparison
+    w.__render = paint;   // site_check.py calls this to force one render for comparison
+    if (readHash(form)) paint();
   }
 
   w.SD = { $: $, raw: raw, n: n, num: num, pct: pct, hrs: hrs, clamp01: clamp01, esc: esc,
