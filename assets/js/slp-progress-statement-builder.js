@@ -16,15 +16,19 @@
     var pron = S.raw('pronoun');
     var subj = SUBJ[pron] || 'they';
     var poss = POSS[pron] || 'their';
-    var verb = subj === 'they' ? 'have' : 'has';
+    /* The first clause's subject is the NAME ("The student has"); the last clause's is the
+       pronoun, and singular "they" takes plural verbs ("they are", "they have"). */
+    var verb = 'has';
+    var plural = subj === 'they';
     var direction = span > 0 ? 'increased' : 'reduced';
     var unit = S.raw('unit');
 
+    var has = plural ? 'have' : 'has', is = plural ? 'are' : 'is';
     var judgment = progress >= 1
-      ? 'has met the criterion and needs a stability check across sessions'
-      : progress >= 0.6 ? 'is making progress sufficient to meet the goal'
-      : progress >= 0.25 ? 'is making progress toward the goal'
-      : 'has made limited progress toward the goal';
+      ? has + ' met the criterion and need' + (plural ? '' : 's') + ' a stability check across sessions'
+      : progress >= 0.6 ? is + ' making progress sufficient to meet the goal'
+      : progress >= 0.25 ? is + ' making progress toward the goal'
+      : has + ' made limited progress toward the goal';
 
     var statement =
       cap(S.raw('name')) + ' ' + verb + ' ' + direction + ' from a baseline of ' +
