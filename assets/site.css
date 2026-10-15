@@ -311,6 +311,13 @@ details.more > summary { cursor:pointer; font-weight:650; color:var(--ink); font
   padding:10px 0; list-style:revert; }
 .rating-line { font-weight:600; color:var(--ink); }
 .rating-line .stars { color:var(--amber); letter-spacing:.06em; }
+.rating-line .sep { opacity:.5; margin:0 2px; }
+/* On the yellow band the line must use the band's own ink: --ink flips near-white in dark mode and the
+   amber stars / teal link fall below 3:1 on #F5E5A1 (Morgan 2026-10-15: the review line was unreadable). */
+.band.brand .rating-line { color:var(--on-brand); margin:16px 0 0; font-size:.95rem; }
+.band.brand .rating-line .stars { color:#9A6A08; }
+.band.brand .rating-line a { color:var(--on-brand); text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:3px; }
+.band.brand .rating-line a:hover { color:var(--cta); }
 .reviews { display:grid; gap:14px; margin:12px 0 8px; padding:0; list-style:none; }
 .reviews li { margin:0; border:1px solid var(--line); border-radius:var(--radius);
   background:var(--panel); padding:16px 18px; }
