@@ -125,6 +125,17 @@ header.site nav a.shop:hover { background:var(--cta-hi); color:var(--cta-text); 
 }
 .btn:hover { background:var(--cta-hi); color:var(--cta-text); transform:translateY(-1px); }
 .btn.lg { padding:14px 24px; font-size:1.04rem; width:100%; }
+/* 2026-11-11: Etsy buttons stand apart from the navy brand colour. #C2410C on white text
+   = 5.2:1 contrast (AA). Matches every button whose link goes to the Etsy shop. */
+.btn[href*="etsy.com"], header.site nav a.shop { background:#C2410C; color:#fff; }
+.btn[href*="etsy.com"]:hover, header.site nav a.shop:hover { background:#9A3412; color:#fff; }
+.btn[href*="etsy.com"]::after { content:"→"; font-weight:700; }
+.calc-next { display:flex; align-items:center; justify-content:space-between; gap:12px 20px;
+  flex-wrap:wrap; margin:18px 0 8px; padding:16px 20px; border:2px solid #C2410C;
+  border-radius:10px; background:#FFF7ED; }
+.calc-next p { margin:0; font-weight:600; color:var(--ink); }
+.calc-next p small { display:block; font-weight:400; color:var(--muted); margin-top:3px; }
+.cat-cta { margin:22px 0 4px; }
 .btn.ghost { background:transparent; color:var(--on-brand); border-color:currentColor; }
 .btn.ghost:hover { background:rgba(255,255,255,.5); color:var(--on-brand); transform:none; }
 
